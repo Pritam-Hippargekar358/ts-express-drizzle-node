@@ -1,4 +1,6 @@
 import { defineConfig } from 'drizzle-kit'
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 export default defineConfig({
   schema: "./src/model/*.ts",
@@ -18,5 +20,6 @@ export default defineConfig({
     password: "Password123#@!",
     port: 3306,
     database: "drizzle",
+    // url: process.env.DATABASE_URL as string
   }
 })
