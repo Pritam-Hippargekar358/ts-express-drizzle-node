@@ -26,7 +26,11 @@ class Application {
   }
 
   public listen() {
-    this.app.listen(this.PORT, () => {
+    this.app.listen(this.PORT, (err?: Error) => {
+      if (err) {
+        console.error('Error starting the server:', err);
+        return;
+      }
       console.log(`Server is running at http://localhost:${this.PORT}`);
     });
   }
